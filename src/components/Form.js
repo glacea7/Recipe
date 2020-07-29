@@ -43,7 +43,7 @@ class Form extends React.Component {
 						</svg>
 					</h1>
 					<p>
-						Please mark off the following ingredients you have. <strong>Click ONCE only</strong>
+						Please select the following ingredients you have. 
 					</p>
 					<div class="form-check" onClick={(event) => this.includesIngredients('eggs', event)}>
 						<input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />

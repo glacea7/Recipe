@@ -1,0 +1,66 @@
+{
+  "recipes": [
+    {
+      "name": "Scrambled Egg",
+      "ingredients": [
+        "oil",
+        "eggs",
+        "cilantro",
+        "fish",
+        "beef",
+        "lettuce",
+        "spam",
+        "chicken",
+        "ketchup",
+        "meat"
+      ],
+      "instructions": "Heat pan, beat eggs, add oil to pan, throw egg to pan, stir eggs, add seasoning, remove pan from heat, keep stirring, "
+    },
+    {
+      "name": "Pizza",
+      "ingredients": [
+        "dough",
+        "cheese",
+        "tomato sauce",
+        "ketchup",
+        "sausages",
+        "tomato",
+        "chicken",
+        "beef",
+        "onions",
+        "meat"
+      ],
+      "instructions": "Roll the dough, put some sauce on it, put some cheese, pop it into the oven 250-260 degrees. Bake for 30 minutes"
+    },
+    {
+      "name": "Fried Rice",
+      "ingredients": [
+        "eggs",
+        "rice",
+        "oil",
+        "spam",
+        "beef",
+        "chicken",
+        "pork",
+        "shrimp",
+        "onions",
+        "carrots",
+        "soy sauce"
+      ],
+      "instructions": "Turn your skillet to medium high heat and pour oil into the bottom of your skillet and add all your ingredients. Fry this until they are tender."
+    },
+    {
+      "name": "Spaghetti",
+      "ingredients": [
+        "pasta",
+        "tomato sauce",
+        "meatballs",
+        "chicken",
+        "spinach",
+        "shrimp",
+        "onions"
+      ],
+      "instructions": "Boil water in a pot, add salt to water, throw pasta in pot when water === boiled, stir occasionally, after 5-6 minutes, drain the pasta but leave some pasta water "
+    }
+  ]
+}
