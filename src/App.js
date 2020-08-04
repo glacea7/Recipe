@@ -2,61 +2,95 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Form from './components/Form';
 import './App.css';
-import {Jumbotron} from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
+import { Jumbotron } from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+import Nav from './components/Nav';
+import Main from './components/Main';
+import RecipeForm from './components/RecipeForm';
+import { Link, animateScroll as scroll } from 'react-scroll';
+import { useSpring, animated } from 'react-spring';
 
 class App extends Component {
 	state = {
 		recipes: [],
 		isTransition: false,
+		scale: 1,
+	};
+	onScale = () => {
+		this.setState({
+			scale: this.state.scale > 1 ? 1 : 1.1,
+		});
+	};
+	jumboPage = () => {
+		const { isTransition } = this.state;
+		{
+			return (
+				<div>
+					<div className="frontPage">
+						<h1>Recipe Projectssss</h1>a simple recipe program
+					</div>
+				</div>
+			);
+			// return(
+			// 	<div >
+			// <div className="mainS" >
+			// 		<div class="front1">	<h1><strong>Recipe Projectssssss</strong></h1>	</div>
+			// 		<section className="front2">
+			// 		<p1 >
+			// 			A simple recipe program
+			// 		</p1>
+			// 	</section>
+			// 	</div>
+			// 		<div className="bootButton">
+			// 		<p>
+			// 		<Link
+			// 			activeClass="active"
+			// 			to="recipeForm"
+			// 			spy={true}
+			// 			smooth={true}
+			// 			offset={-70}
+			// 			duration= {500}
+			// 		> <button type="button" class="btn btn-primary btn-lg">View Program</button> </Link>
+			// 		</p>
+
+			// 		</div>
+			// </div>
+			// )
+		}
 	};
 
-	async componentDidMount() {
-		const response = await axios.get('http://localhost:3001/recipes');
-		console.log(response);
-
-		this.setState({ recipes: response.data });
-	}
-	frontPage = () =>{
-		const {isTransition} = this.state
-		this.setState({
-			isTransition: true
-		})	
-	}
-
-	 handleNext = ()=> {
-		const {recipes, isTransition} = this.state
-		console.log(isTransition)
-		if(isTransition===true)
-		{
-			return (<div>
-		<div className="App-header"> </div>
-				<div className="App">
-					<div>{<Form recipes={recipes} />}</div>
-				</div>
-				</div>)
-				}
-	}
-	
 	render() {
-		const { recipes } = this.state;
-		this.handleNext()
+		const { recipes, isTransition, scale } = this.state;
+		const styles = {
+			transition: 'all 1s ease-out',
+		};
+		console.log('recipes', recipes);
 		return (
-			<div>
-				<Jumbotron>
-					<h1>Recipe Project!</h1>
-					<p>
-						This is a simple recipe program that allows you view available dishes from ingredients you select
-					</p>
-					<p>
-						<button onClick={this.frontPage}>Begin</button>
-					</p>
-				</Jumbotron>
-				
+			<div className="App">
+				<div className="banner">
+					<div className="bannerCursor">
+						<Link to="main" spy={true} smooth={true} offset={0} duration={500}>
+							<img src="https://i.imgur.com/ODFgSBl.gif" width="65" />
+						</Link>
+						<div className="arrowUp">
+							<Link to="main" spy={true} smooth={true} offset={0} duration={500}>
+								<img src="https://image.flaticon.com/icons/svg/892/892556.svg" width="30" />
+							</Link>
+						</div>
+					</div>
+				</div>
+				<div className="arrowDown" onClick={this.onScale} styles={{ transform: 'scale(' + this.state.scale + ')' }}>
+					<Link to="recipe" spy={true} smooth={true} offset={0} duration={500}>
+						<img src="https://image.flaticon.com/icons/svg/892/892499.svg" width="30" />
+					</Link>
+				</div>
+
+				<Main />
+				<div className="filler">a</div>
+				<RecipeForm />
 			</div>
 		);
 	}
-	
 }
 
 export default App;

@@ -1,7 +1,241 @@
-.App {
+.filler {
+	background-color: coral;
+	height: 7vh;
+}
+button {
+	color: black;
+	padding: 0.5px;
+	margin: 0px;
+	border: 4px solid blue;
+	border-radius: 1px;
+	background: solid white;
+	outline: none;
+	cursor: pointer;
+}
+.display {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.displayResults {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+.displayResultsBox {
+	width: 30rem;
+	margin: 3rem;
+	display: flex;
+	flex-direction: column;
+	background-color: coral;
+	padding: 2rem;
+	position: relative;
+	border-radius: 0.5rem;
+	box-shadow: 2rem 3rem 5rem rgb(19, 18, 18);
+}
+.arrowUp {
+	position: absolute;
+	bottom: 0%;
+	margin: 4px;
+	padding: 4px;
+	left: 8%;
+}
+.arrowDown {
+	padding: 4px;
+	margin: 0px;
+	border: 2px;
+	margin: auto;
+	position: absolute;
+	top: 95%;
+	left: 50%;
+	cursor: pointer;
+}
+.bootButton {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	bottom: 0%;
+	margin: 24px;
+	padding: 24px 80px;
+}
+.sectionOneBG {
+	width: 100%;
+	height: 100vh;
+	padding-left: 0px;
+	margin: 0px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.ctfassets.net/3s5io6mnxfqz/31XlK9VOOLZso2sjg434Jt/266a70a34dbfca8b289874f7ba3ceae7/AdobeStock_181918491.jpeg?w=800&fm=jpg&fl=progressive);
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	z-index: -2;
+	clip-path: polygon(81% 0, 100% 0, 100% 43%, 100% 100%, 81% 100%, 38% 77%, 0 67%, 0 0, 46% 0);
+}
+.sectionOneBG2 {
+	background-image: url(https://www.nevada.lib.ia.us/theme_resources/bg.jpg/image);
+	clip-path: polygon(0 79%, 0% 100%, 63% 85%);
+	height: 100vh;
+}
+.sectionOneContent {
+	width: 20%;
+
+	margin: 48px;
+	position: relative;
+	left: 10%;
+	color: white;
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+.sectionOneContent2 {
+	position: relative;
+	border: 1px;
+
+	top: 120px;
+	left: 10%;
+	word-spacing: 10px;
+	color: white;
+	margin: 0px;
+}
+.section2 {
+	height: 100vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.ytimg.com/vi/tXKnzpnPdTE/maxresdefault.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	color: white;
+}
+.section2Content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+.section2Header {
+	border: 1px;
+	border-style: solid;
+	padding: 16px;
+	border-radius: 1.5em;
+}
+.section2Search {
+	padding: 8px;
+	margin: 8px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.mainS {
+	display: flex;
+	align-items: flex-end;
+
+	background-image: url(https://media.luxhabitat.ae/journal/c4d4c19a81ba75cfb366266795bc2e70_mod_original.jpg);
+	background-position-x: center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	background-blend-mode: darken;
+	/* clip-path: polygon(1% 35%, 100% 0, 100% 20%, 100% 100%, 76% 100%, 70% 90%, 40% 45%); */
+	clip-path: polygon(81% 0, 100% 0, 100% 43%, 100% 100%, 81% 100%, 38% 77%, 0 67%, 0 0, 46% 0);
+	position: absolute;
+	z-index: -1;
+}
+
+.banner {
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	right: auto;
+	z-index: 99;
+	display: flex;
+	width: 65px;
+	height: 100vh;
+	background: coral;
+	border: 1px;
+
+	padding-top: 40px;
+	padding-bottom: 40px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	align-items: stretch;
+	background-image: url();
+}
+.bannerCursor {
+	cursor: pointer;
+	padding-top: 300px;
+}
+.frontPage {
+	height: 100vh;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+
+	color: black;
+	font-size: 100px;
+	margin: 32px;
+	padding: 32px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.front1 {
+	color: black;
+	margin: 40px;
+	padding-left: 400px;
+	font-weight: 800;
+}
+.front2 {
+	border: 1px;
+	border-style: solid;
+	border-color: orange;
+	border-radius: 2rem;
+	background: linear-gradient(150deg, coral, brown, coral);
+	color: white;
+	font-weight: 550;
+	display: flex;
+	margin: 8px;
+	position: relative;
+	left: 100px;
+	padding: 16px;
+}
+
+.form-header {
+	background: black;
+}
+
+.jumbotron {
+	margin: 400px;
+	background: lightblue;
+	background-repeat: no-repeat, repeat;
+	height: 370px;
+	font-size: calc(5px + 3vmin);
+	color: black;
+
+	border-radius: 100px;
+	font-style: bold;
+	box-shadow: 20px 20px 5px 0px rgba(0, 0, 0, 0.603);
+	margin-top: 50px;
+}
+.jumbotron h1 {
+	padding: 20px;
+	font-size: 50px;
 	display: flex;
 	justify-content: center;
-	background-color: #f8f9e6;
+	align-items: center;
+	font-style: bold;
+}
+.jumbotron p {
+	display: flex;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
 }
 
 .App-container {
@@ -10,26 +244,30 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	width: 35rem;
-	background: #f8f9e6;
-	background-color: #f8f9e6;
+	background: yellow;
+	background-color: yellow;
 }
 
 .instr {
-	background-color: #f8f9e6;
+	background-image: url(https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/12/30/0/TU0602_Beef-Wellington.jpg.rend.hgtvcom.826.620.suffix/1384541151569.jpeg);
+
+	display: flex;
+	align-items: column;
+	border: none;
+	border-top: 0.1rem solid rgb(25, 151, 235);
+	border-bottom: 0.1rem solid rgb(25, 151, 235);
+	border-radius: 1rem;
+	color: black;
 }
 
 .body-form {
 	background: #f8f9e6;
 }
-.App-header {
-	background: #001133;
-	min-height: 5vh;
+.App {
+	font-family: 'Permanent Marker';
 	display: flex;
 	flex-direction: column;
-	align-items: right;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: #61dafb;
+	min-height: 5rem;
 }
 
 .App-link {
