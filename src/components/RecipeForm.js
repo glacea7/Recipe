@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getData } from '../actions/recipeActions';
+
 class RecipeForm extends React.Component {
 	state = {
 		userInput: '',
@@ -7,16 +11,16 @@ class RecipeForm extends React.Component {
 		show: false,
 	};
 
-	async getData() {
-		const { userInput } = this.state;
-		let { recipes } = this.state;
-		const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&ingredients=${userInput}`;
-		const result = await axios.get(url);
-		console.log(process.env.REACT_APP_FOOD_API_KEY);
-		recipes = result.data;
-		console.log(result.data);
-		this.setState({ userInput: '', recipes: recipes });
-	}
+	// async getData() {
+	// 	const { userInput } = this.state;
+	// 	let { recipes } = this.state;
+	// 	const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&ingredients=${userInput}`;
+	// 	const result = await axios.get(url);
+	// 	console.log(process.env.REACT_APP_FOOD_API_KEY);
+	// 	recipes = result.data;
+	// 	console.log(result.data);
+	// 	this.setState({ userInput: '', recipes: recipes });
+	// }
 	onChange = (event) => {
 		let { userInput } = this.state;
 		userInput = event.target.value;
@@ -24,23 +28,16 @@ class RecipeForm extends React.Component {
 		this.setState({ userInput: userInput });
 	};
 	formSubmit = (event) => {
+		const { userInput } = this.state;
+		const { triggerGetData } = this.props;
 		event.preventDefault();
-		this.getData();
+		triggerGetData(userInput);
 		this.setState({ show: true });
 	};
-	resultsCounter = () => {
-		const { recipes, show } = this.state;
-		let counter = 0;
-		if (show) {
-			for (let i = 0; i <= recipes.length; i++) {
-				counter = counter + i;
-				return counter;
-			}
-		}
-	};
-	expandRecipe = () => {};
+
 	render() {
-		let { userInput, recipes, show } = this.state;
+		let { userInput, show } = this.state;
+		const { recipes } = this.props;
 		return (
 			<div className="section2" id="recipe">
 				<div className="section2Content">
@@ -57,9 +54,6 @@ class RecipeForm extends React.Component {
 					</div>
 				</div>
 				<div>
-					<div className="display">
-						<h1>{this.resultsCounter}</h1>
-					</div>{' '}
 					<div className="displayResults">
 						{recipes !== [] &&
 							recipes.map((recipe) => (
@@ -76,4 +70,11 @@ class RecipeForm extends React.Component {
 		);
 	}
 }
-export default RecipeForm;
+const mapStateToProps = (state) => {
+	return { recipes: state.recipeData.recipes };
+};
+const mapDispatchToProps = (dispatch) => {
+	return { triggerGetData: bindActionCreators(getData, dispatch) };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeForm);
