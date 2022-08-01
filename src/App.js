@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Form from './components/Form';
 import './App.css';
-import { Jumbotron } from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
-import Nav from './components/Nav';
 import Main from './components/Main';
 import RecipeForm from './components/RecipeForm';
 import { Link, animateScroll as scroll } from 'react-scroll';
-import { useSpring, animated } from 'react-spring';
 
 class App extends Component {
 	state = {
@@ -64,24 +60,25 @@ class App extends Component {
 		const styles = {
 			transition: 'all 1s ease-out',
 		};
+	
 		console.log('recipes', recipes);
 		return (
 			<div className="App">
 				<div className="banner">
 					<div className="bannerCursor">
 						<Link to="main" spy={true} smooth={true} offset={0} duration={500}>
-							<img src="https://i.imgur.com/ODFgSBl.gif" width="65" />
+							<img src="https://www.svgrepo.com/show/9399/home.svg" alt="home" width="60" height="40" />
 						</Link>
-						<div className="arrowUp">
+						{/* <div className="arrowUp">
 							<Link to="main" spy={true} smooth={true} offset={0} duration={500}>
-								<img src="https://image.flaticon.com/icons/svg/892/892556.svg" width="30" />
+								<img src="https://www.svgrepo.com/show/52696/up-arrow.svg" width="30" />
 							</Link>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<div className="arrowDown" onClick={this.onScale} styles={{ transform: 'scale(' + this.state.scale + ')' }}>
 					<Link to="recipe" spy={true} smooth={true} offset={0} duration={500}>
-						<img src="https://image.flaticon.com/icons/svg/892/892499.svg" width="30" />
+						<img src="https://www.svgrepo.com/show/52695/down-arrow.svg" width="30" />
 					</Link>
 				</div>
 

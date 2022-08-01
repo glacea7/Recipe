@@ -10,17 +10,6 @@ class RecipeForm extends React.Component {
 		recipes: [],
 		show: false,
 	};
-
-	// async getData() {
-	// 	const { userInput } = this.state;
-	// 	let { recipes } = this.state;
-	// 	const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&ingredients=${userInput}`;
-	// 	const result = await axios.get(url);
-	// 	console.log(process.env.REACT_APP_FOOD_API_KEY);
-	// 	recipes = result.data;
-	// 	console.log(result.data);
-	// 	this.setState({ userInput: '', recipes: recipes });
-	// }
 	onChange = (event) => {
 		let { userInput } = this.state;
 		userInput = event.target.value;
@@ -58,10 +47,12 @@ class RecipeForm extends React.Component {
 						{recipes !== [] &&
 							recipes.map((recipe) => (
 								<div className="displayResultsBox">
-									<li key={recipe.id}>
+									<p2 key={recipe.id}>
 										{recipe.title}
 										<img src={recipe.image} />
-									</li>
+										<br />
+										<strong>💗{recipe.likes} likes</strong>
+									</p2>
 								</div>
 							))}
 					</div>

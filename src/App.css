@@ -20,20 +20,22 @@ button {
 .displayResults {
 	display: flex;
 	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: flex-start;
+	justify-items: center;
 }
 .displayResultsBox {
 	width: 30rem;
-	margin: 3rem;
+	margin: 2rem;
 	display: flex;
 	flex-direction: column;
 	background-color: coral;
-	padding: 2rem;
+	padding: 3rem;
 	position: relative;
 	border-radius: 0.5rem;
-	box-shadow: 2rem 3rem 5rem rgb(19, 18, 18);
+	box-shadow: 1rem 1.5rem 3rem rgb(5, 5, 5);
+	
 }
 .arrowUp {
 	position: absolute;
@@ -166,7 +168,7 @@ button {
 }
 .bannerCursor {
 	cursor: pointer;
-	padding-top: 300px;
+	top:0;
 }
 .frontPage {
 	height: 100vh;
@@ -264,7 +266,7 @@ button {
 	background: #f8f9e6;
 }
 .App {
-	font-family: 'Permanent Marker';
+	font-family: 'Verdana,Helvetica,sans-serif';
 	display: flex;
 	flex-direction: column;
 	min-height: 5rem;
